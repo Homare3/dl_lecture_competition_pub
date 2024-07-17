@@ -445,7 +445,7 @@ def eval(model, dataloader, optimizer, criterion, device):
 
 def main():
 
-    wandb.init(project="dl_lecture_competition_4")
+    wandb.init(project="dl_lecture_competition")
     # deviceの設定
     set_seed(42)
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -481,7 +481,7 @@ def main():
         param.requires_grad = False
 
     # optimizer / criterion
-    num_epoch = 3
+    num_epoch = 10
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.AdamW(model.parameters(), lr=0.0001, weight_decay=1e-5)
 
